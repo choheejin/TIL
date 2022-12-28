@@ -20,13 +20,17 @@ CSS 모듈은 고유한 클래스 이름을 자동으로 생성하여 CSS 범위
 ## Next.js 에서의 사전 렌더링
 기본적으로 Next.js 는 모든 페이지를 사전 렌더링 한다. 즉, 클라이언트 측 javascript 에서 모든 작업을 수행하는 대신 미리 각 페이지에 대한 HTML 을 생성한다.   
 생성된 각 HTML 은 해당 페이지에 필요한 최소한의 Javascript 코드와 연결된다.   
+<img width="673" alt="image" src="https://user-images.githubusercontent.com/74577803/209810012-3b8b4006-1f95-43e4-bc64-ec15604bb989.png">
+
 
 - Next.js는 javascript 없이 랜더링이 진행된다. 정적 HTML 로 미리 렌더링 하여 JavaScript 를 실행하지 않고도 화면을 볼 수 있다.
 - React.js는 사전 렌더링을 하지 않아, JavaScript 를 비활성화 하면 화면을 볼 수 없다.
 
 ### 사전 렌더링의 형식
 1. 정적 생성: 빌드 시 HTML 을 생성하는 사전 렌더링 방법 -> 미리 렌더링 된 HTML 이 각 요청에서 재사용된다 
-2. 서버 측 렌더링: 각 요청에서 HTML 을 생성하는 사전 렌더링 방법
+   <img width="673" alt="image" src="https://user-images.githubusercontent.com/74577803/209809716-c7a5f152-986b-47d4-8110-bb3d99a9eb24.png">
+3. 서버 측 렌더링: 각 요청에서 HTML 을 생성하는 사전 렌더링 방법
+   <img width="683" alt="image" src="https://user-images.githubusercontent.com/74577803/209809880-02ba7370-15b8-4f1d-b5c4-b822fad18db6.png">
 
 ### 사전 렌더링 형식 선택하기
 Next.js 는 사전 렌더링의 형식을 선택할 수 있다.   
