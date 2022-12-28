@@ -29,10 +29,42 @@ CSS 모듈은 고유한 클래스 이름을 자동으로 생성하여 CSS 범위
 ### 사전 렌더링의 형식
 1. 정적 생성: 빌드 시 HTML 을 생성하는 사전 렌더링 방법 -> 미리 렌더링 된 HTML 이 각 요청에서 재사용된다 
    <img width="673" alt="image" src="https://user-images.githubusercontent.com/74577803/209809716-c7a5f152-986b-47d4-8110-bb3d99a9eb24.png">
-3. 서버 측 렌더링: 각 요청에서 HTML 을 생성하는 사전 렌더링 방법
+2. 서버 측 렌더링: 각 요청에서 HTML 을 생성하는 사전 렌더링 방법
    <img width="683" alt="image" src="https://user-images.githubusercontent.com/74577803/209809880-02ba7370-15b8-4f1d-b5c4-b822fad18db6.png">
 
 ### 사전 렌더링 형식 선택하기
 Next.js 는 사전 렌더링의 형식을 선택할 수 있다.   
 - 정적 생성은 페이지에 자주 업데이트 되는 데이터가 표시되고, 페이지 콘텐츠가 모든 요청에서 변경될 수 있을 때 사용
 - 서버측 렌더링은 속도는 느려지지만, 미리 렌더링 된 페이지는 항상 최신 상태이다. 즉, 요청이 있을 때마다 데이터를 최신 상태로 유지해야 하는 경우 사용
+
+
+### 정적 생성 사용 (getStaticProps())
+서버 측에서 실행 되기 때문에, 데이터베이스에 직접 쿼리하는 것 또한 가능하다.   
+개발 중(`npm run dev`)에는 모든 요청에 실행된다.   
+프로덕션 환경에서는 빌드 시 실행된다.   
+
+``` typescript
+export async function getStaticProps(){
+    const res = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline');
+    const productsData = await res.json();
+
+    return { props: {productsData} };
+}
+
+export default function Post ({productsData}: any){
+    return ( ... );
+}
+```
+
+### 서버 측 렌더링 (getServerSideProps())
+SEO 와 관련이 없는 비공개 사용자별 페이지의 경우, 주로 사용한다.   
+
+```typescript
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      // props for your component
+    },
+  };
+}
+```
