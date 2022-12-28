@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import  Head  from "next/head";
 import Layout from "../src/components/layout";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,8 @@ export default function Home() {
               </div>
 
               <div>이거지~</div>
+
+              <Link className="text-blue-500 cursor-pointer" href="/about">About me</Link>
           </Layout>
       </div>
   )
