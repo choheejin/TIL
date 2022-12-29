@@ -56,6 +56,29 @@ export default function Post ({productsData}: any){
 }
 ```
 
+### 동적 경로에서 정적 생성 사용
+id 값 넘겨줄 때, 타입을 조심해야 한다.
+
+`
+error - Error: A required parameter (id) was not provided as a string in getStaticPaths for /post/[id]
+`
+
+다음과 같은 에러가 발생할 시, 타입을 String 으로 변환해주었는지 다시 한 번 확인해보아야 한다.
+
+```typescript
+export async function getStaticPaths() {
+    const res = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json');
+    const products = await res.json();
+
+    const paths = products.map((product : any) => ({
+        params: { id: product.id.toString()},
+    }));
+
+    return {paths, fallback: false};
+}
+
+```
+
 ### 서버 측 렌더링 (getServerSideProps())
 SEO 와 관련이 없는 비공개 사용자별 페이지의 경우, 주로 사용한다.   
 
