@@ -57,13 +57,15 @@ export default function Post ({productsData}: any){
 ```
 
 ### 동적 경로에서 정적 생성 사용
-id 값 넘겨줄 때, 타입을 조심해야 한다.
+- id 값 넘겨줄 때, 타입을 조심해야 한다.
 
 `
 error - Error: A required parameter (id) was not provided as a string in getStaticPaths for /post/[id]
 `
 
 다음과 같은 에러가 발생할 시, 타입을 String 으로 변환해주었는지 다시 한 번 확인해보아야 한다.
+
+- `fallback:false`는 fallback 에서 false 를 반환하지 않은 모든 경로는  이외의 다른 경로는 404 페이지로 가게 된다.
 
 ```typescript
 export async function getStaticPaths() {

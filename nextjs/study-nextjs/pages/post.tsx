@@ -15,12 +15,14 @@ export default function Post ({productsData}: any){
                 {
                     productsData.map((product : any) => {
                         return (
-                            <Link href={`/post/`+ product.id} className="cursor-pointer">
-                                <div>{product.brand}</div>
-                                <div>{product.name}</div>
-                                <div>{product.price}</div>
-                                <div>{product.description}</div>
-                            </Link>
+                            <div key={product.id}>
+                                <Link href={`/post/`+ product.id} className="cursor-pointer">
+                                    <div>{product.brand}</div>
+                                    <div>{product.name}</div>
+                                    <div>{product.price}</div>
+                                    <div>{product.description}</div>
+                                </Link>
+                            </div>
                         );
                     })
                 }
