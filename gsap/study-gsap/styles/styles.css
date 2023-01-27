@@ -2,3 +2,36 @@
     width: 100px;
     hight: 100px;
 }
+
+.box {
+    display: flex;
+    width: 100%;
+    gap: 4px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+#circle1 {
+    background-color: cornflowerblue;
+}
+
+#circle3 {
+    background-color: lightsalmon;
+}
+
+
+#circle2 {
+    background-color: coral;
+}
+
+#circle4 {
+    background-color: mediumslateblue;
+}
+
+#circle5 {
+    background-color: mediumseagreen;
+}
