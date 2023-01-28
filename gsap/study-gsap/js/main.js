@@ -32,13 +32,24 @@
 //
 // gsap.to('#icon', {duration:2, x: 300, backgroundColor: 'black', borderRadius: '20%', border: '5px solid black', ease: 'bounce'})
 
-gsap.set('#icon', {transformOrigin: 'right bottom'});
-gsap.to('#icon', {duration: 20, rotation: 360});
+// gsap.set('#icon', {transformOrigin: 'right bottom'});
+// gsap.to('#icon', {duration: 20, rotation: 360});
+//
+// let myObject = {rotation: 0};
+// gsap.to(myObject, {duration:20, rotation: 360, onUpdate: function () {
+//     console.log(myObject.rotation);
+// }});
 
-let myObject = {rotation: 0};
-gsap.to(myObject, {duration:20, rotation: 360, onUpdate: function () {
-    console.log(myObject.rotation);
-}});
-
-gsap.from('.circle', {duration: 1, opacity:0, y: 'random(-200, 200)', stagger: 0.25});
+// gsap.from('.circle', {duration: 1, opacity:0, y: 'random(-200, 200)', stagger: 0.25});
 // stagger -> 리스트 차례대로 애니메이션 진행 가능하게
+
+let t1 = gsap.timeline({repeat: 2, yoyo: true});
+
+t1.from('.icon', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+t1.to('.icon', {duration:1, rotation: 360});
+t1.from('.circle', {duration: 1, opacity: 0, y: 150, stagger: 0.25});
+
+t1.addLabel('circlesOutro', '+=1');
+t1.to('.circle', {duration: 0.5, opacity: 0, x: 300, ease: 'power3.out'}, 'circlesOutro');
+
+// 아... 자료 찾기 빡세네...
