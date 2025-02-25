@@ -3,15 +3,16 @@
 Today I Learned
 
 ### Categories
-* [cs](#cs)
+* [db](#db)
 * [http](#http)
 * [infra](#infra)
 * [java](#java)
+* [SpringBoot](#springboot)
 
 ---
 
-### cs
-- [redis](cs/redis.md)
+### db
+- [redis](db/redis.md)
 
 ### http
 - [url과-리소스](http/url과-리소스.md)
@@ -26,6 +27,8 @@ Today I Learned
 - [쿠버네티스-기본개념](infra/쿠버네티스-기본개념.md)
 
 ### Java
-- [springboot-bean-component](java/springboot-bean-component.md)
 - [일급컬렉션](java/일급컬렉션.md)
 - [자바코드컨벤션](java/자바코드컨벤션.md)
+
+### SpringBoot
+- [springboot-bean-component](springboot/springboot-bean-component.md)
