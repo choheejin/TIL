@@ -14,6 +14,7 @@
   - 탈중앙화된 World Computer 동일한 상태를 유지
 - Smart Contract를 작성하는 언어
   - Solidity
+  	- [Solidity 문법 연습하기](https://cryptozombies.io/ko)
   - LLL
   - Viper
   - Assembly
@@ -45,3 +46,5 @@ sending transaction
 > ByteCode: 작성한 smart contract 코드의 컴파일 된 코드
 > ABI(Application Binary Interface): contract에 정의되어 있는 functional list
 > CA(Contract Address): smart contract를 배포하게 되면, 그 id로 쓰게 될 주소
+
+
